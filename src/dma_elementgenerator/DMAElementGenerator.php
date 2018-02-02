@@ -709,7 +709,7 @@ class DMAElementGenerator extends Frontend
             $arrFieldData  = &$objTemplate->data[$strName];
             $arrImagePaths = [];
             
-            if ($arrFieldData['value']) {
+            if ($arrFieldData['value'] && is_array($arrFieldData['value'])) {
                 foreach ($arrFieldData['value'] as &$arrValue) {
                     $objFile = \FilesModel::findByUuid($arrValue['raw']);
                     
