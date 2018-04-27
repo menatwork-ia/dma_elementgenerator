@@ -8,12 +8,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 2.1 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at http://www.gnu.org/licenses/.
@@ -26,7 +26,7 @@
  * @filesource
  */
 
-  
+
 $GLOBALS['TL_LANG']['tl_dma_eg']['title'] = array('Bezeichnung','Bezeichnung des Elementes');
 $GLOBALS['TL_LANG']['tl_dma_eg']['category'] = array('Kategorie','Unter welcher Überschrift/Kategorie soll das Element in der Modul-/Inhaltselementliste geführt werden? (Inhaltselemente: texts, links, media, files, includes; Module: navigationMenu, user, application, miscellaneous');
 $GLOBALS['TL_LANG']['tl_dma_eg']['description'] = array('Beschreibung','Wird im Backend im Hilfe-Widget angezeigt');
@@ -39,7 +39,7 @@ $GLOBALS['TL_LANG']['tl_dma_eg']['class'] = array('zusätzliche Klasse für dies
 $GLOBALS['TL_LANG']['tl_dma_eg']['without_label'] = array('Feldausgabe ohne Label','Sollen die Felder ohne Label ausgegeben werden?');
 $GLOBALS['TL_LANG']['tl_dma_eg']['display_in_divs'] = array('Felder in divs ausgeben','Standardmäßig werden die Inhalte als ul ausgegeben. Alternativ ist auch eine Ausgabe in divs möglich.');
 $GLOBALS['TL_LANG']['tl_dma_eg']['invisible'] = array('Nicht anzeigen/verwenden','Soll dieses Element nicht zur Auswahl angezeigt werden?');
-  
+
 $GLOBALS['TL_LANG']['tl_dma_eg']['new'] = array('Neues Element','Ein neues Element anlegen');
 
 $GLOBALS['TL_LANG']['tl_dma_eg']['edit'] = array('Element bearbeiten','Element ID %s bearbeiten');
@@ -50,7 +50,7 @@ $GLOBALS['TL_LANG']['tl_dma_eg']['deleteConfirm'] = 'Soll das Element ID %s wirk
 $GLOBALS['TL_LANG']['tl_dma_eg']['show'] = array('Details anzeigen','Details des Elementes ID %s anzeigen');
 
 $GLOBALS['TL_LANG']['tl_dma_eg']['tstamp'] = array('Letzte Änderung','');
-  
+
 // LEGENDS
 $GLOBALS['TL_LANG']['tl_dma_eg']['expert_legend'] = 'Experteneinstellungen';
 $GLOBALS['TL_LANG']['tl_dma_eg']['title_legend'] = 'Name und Kategorie';
@@ -60,5 +60,5 @@ $GLOBALS['TL_LANG']['tl_dma_eg']['visibility_legend'] = "Sichtbarkeit";
 // LABEL
 $GLOBALS['TL_LANG']['tl_dma_eg']['labelCategories']['labelContentelement'] = 'Inhaltselement';
 $GLOBALS['TL_LANG']['tl_dma_eg']['labelCategories']['labelFrontendmodule'] = 'Frontendmodul';
-  
+
 ?>
