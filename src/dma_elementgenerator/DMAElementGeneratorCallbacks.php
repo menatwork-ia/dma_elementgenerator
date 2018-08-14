@@ -139,6 +139,12 @@ class DMAElementGeneratorCallbacks extends \Backend
         $strTable = 'tl_'.$strTableName;
         $this->strTable = $strTable;
 
+        // Get content element type: dma_eg_#
+        $strType = $this->Database->prepare("SELECT type FROM $strTable WHERE id=?")
+            ->execute($dc->id)
+            ->type
+        ;
+
         // If field values are empty get them from Database
         if (!is_array($fields))
         {
@@ -487,6 +493,14 @@ class DMAElementGeneratorCallbacks extends \Backend
                                     $fields[$objField->title] = trimsplit($GLOBALS['TL_DCA'][$strTable]['fields'][$title]['eval']['csv'], $fields[$objField->title]);
                                 }
                             }
+                        }
+
+                        if (isset($GLOBALS['TL_CONFIG']['dma_elementgenerator'][$strType][$objField->title])) {
+
+                            $GLOBALS['TL_DCA'][$strTable]['fields'][$title]['eval'] = array_merge(
+                                $GLOBALS['TL_DCA'][$strTable]['fields'][$title]['eval'],
+                                $GLOBALS['TL_CONFIG']['dma_elementgenerator'][$strType][$objField->title]
+                            );
                         }
                     }
                 }
