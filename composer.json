@@ -1,5 +1,5 @@
 {
-  "name": "dma/contao-dma_elementgenerator-bundle",
+  "name": "dma/dma_elementgenerator",
   "description": "Erlaubt das Erstellen von eigenen Contentelement und Modulen",
   "keywords": ["elements","contentelement","modules","layout","content","contao"],
   "type": "contao-bundle",
