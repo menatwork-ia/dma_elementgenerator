@@ -12,6 +12,9 @@
 // Prefix
 define('DMA_EG_PREFIX','dma_eg_');
 
+$GLOBALS['TL_MODELS']['tl_dma_eg']             = 'DMA\DMABundle\Model\DmaEgModel';
+$GLOBALS['TL_MODELS']['tl_dma_eg_fields']      = 'DMA\DMABundle\Model\DmaEgFieldsModel';
+
 // Backend module definition
 array_insert($GLOBALS['BE_MOD']['design'], 1, array
 	(
