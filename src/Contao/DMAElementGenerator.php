@@ -10,9 +10,6 @@
 
 namespace DMA\DMABundle\Contao;
 
-use DMA\DMABundle\DMABundle;
-use DMA\DMABundle\Models\DmaEgFieldsModel;
-use DMA\DMABundle\Models\DmaEgModel;
 
 /**
  * Class DMAElementGeneratorContent
@@ -50,7 +47,7 @@ class DMAElementGenerator extends \Frontend
         if ($strName == "default")
         {
 
-            $objContentElements = DmaEgModel::findBy('content', 1);
+            $objContentElements = \DmaEgModel::findBy('content', 1);
 
             if ($objContentElements !== null)
             {
@@ -125,7 +122,7 @@ class DMAElementGenerator extends \Frontend
         $arrData = deserialize($data->dma_eg_data);
 
 
-        $objField = DmaEgFieldsModel::findAllNotLegendsByPid($elementID);
+        $objField = \DmaEgFieldsModel::findAllNotLegendsByPid($elementID);
 
         if ($objField === null)
         {
@@ -142,7 +139,7 @@ class DMAElementGenerator extends \Frontend
                 if ($objField->subpaletteSelector)
                 {
 
-                    $objSubSelector = DmaEgFieldsModel::findOneBy('id', $objField->subpaletteSelector);
+                    $objSubSelector = \DmaEgFieldsModel::findOneBy('id', $objField->subpaletteSelector);
 
                     if ($objSubSelector !== null && $arrData[$objSubSelector->title] == "")
                     {

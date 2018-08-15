@@ -8,7 +8,7 @@
  * @license LGPL-3.0+
  */
 
-namespace DMA\DMABundle\Models;
+namespace Contao;
 
 
 class DmaEgFieldsModel extends \Model
