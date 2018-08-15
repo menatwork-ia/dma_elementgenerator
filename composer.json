@@ -3,7 +3,7 @@
   "description": "Erlaubt das Erstellen von eigenen Contentelement und Modulen",
   "keywords": ["elements","contentelement","modules","layout","content","contao"],
   "type": "contao-bundle",
-  "license": "LGPL-3.0+",
+  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Janosch Oltmanns",
