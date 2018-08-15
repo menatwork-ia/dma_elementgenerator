@@ -1,8 +1,8 @@
 {
-  "name": "dma/dma_elementgenerator",
+  "name": "dma/contao-dma_elementgenerator-Bundle",
   "description": "Erlaubt das Erstellen von eigenen Contentelement und Modulen",
   "keywords": ["elements","contentelement","modules","layout","content","contao"],
-  "type": "contao-module",
+  "type": "contao-bundle",
   "license": "LGPL-3.0+",
   "authors": [
     {
@@ -16,6 +16,12 @@
       "email": "carsten@ckollmeier.de",
       "homepage": "",
       "role": "Contributor"
+    },
+    {
+      "name": "Andreas Dziemba",
+      "email": "dziemba@men-at-work.de",
+      "homepage": "men-at-work.de",
+      "role": "Developer"
     }
   ],
   "support": {
@@ -24,18 +30,28 @@
     "source": "https://github.com/DMAGmbH/dma_elementgenerator",
     "forum": "https://community.contao.org/de/forumdisplay.php?134-dma_elementgenerator"
   },
+  "autoload":{
+    "psr-4": {
+      "DMA\\DMABundle\\": "src"
+    },
+    "classmap": [
+      "src/Contao/"
+    ],
+    "exclude-from-classmap": [
+      "src/Resources/contao/config/",
+      "src/Resources/contao/dca/",
+      "src/Resources/contao/languages/",
+      "src/Resources/contao/templates/"
+    ]
+  },
   "replace": {
     "contao-legacy/dma_elementgenerator": "*"
   },
   "require": {
-    "php": ">=5.3.4",
-    "contao/core-bundle": "^3.2 || ^4.1"
+    "php": "^7.0",
+    "contao/core-bundle": "^4.4"
   },
   "extra": {
-    "contao": {
-      "sources": {
-        "src/dma_elementgenerator": "system/modules/dma_elementgenerator"
-      }
-    }
+    "contao-manager-plugin": "DMA\\DMABundle\\ContaoManager\\Plugin"
   }
 }
