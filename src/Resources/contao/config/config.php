@@ -21,8 +21,8 @@ array_insert($GLOBALS['BE_MOD']['design'], 1, array
 		'dma_eg' => array
 		(
 			'tables' => array('tl_dma_eg','tl_dma_eg_fields'),
-			'icon'       => 'bundles/dma_elementgenerator/icon.png',
-			'javascript' => 'bundles/dma_elementgenerator/tl_dma_eg-uncompressed.js'
+			'icon'       => 'bundles/dma/icon.png',
+			'javascript' => 'bundles/dma/tl_dma_eg-uncompressed.js'
 		)
 	));
 

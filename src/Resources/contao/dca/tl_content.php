@@ -36,7 +36,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dmaElementTpl'] = array
 // Compatibility
 if (TL_MODE == 'BE')
 {
-    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/dma_elementgenerator/DMA-uncompressed.js';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/dma/DMA-uncompressed.js';
 }
 
 
