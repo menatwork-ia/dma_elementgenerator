@@ -26,7 +26,7 @@ class DmaEgFieldsModel extends \Model
 	 * @param mixed $intPid      The numeric PID
 	 * @param array $arrOptions An optional options array
 	 *
-	 * @return static The DmaEgFieldsModel or null if there are no fields
+	 * @return \Model static The DmaEgFieldsModel or null if there are no fields
 	 */
 
 	public static function findAllNotLegendsByPid($intPid, array $arrOptions=array())
@@ -47,7 +47,7 @@ class DmaEgFieldsModel extends \Model
 
 		}
 
-		return static::findBy($arrColumns, $arrValues, $arrOptions);
+		return parent::findBy($arrColumns, $arrValues, $arrOptions);
 	}
 
 }

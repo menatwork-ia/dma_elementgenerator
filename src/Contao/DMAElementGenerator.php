@@ -128,7 +128,8 @@ class DMAElementGenerator extends \Frontend
 
         if ($objField === null)
         {
-            return "";
+            $objTemplate = new \FrontendTemplate(($objElement->template ? $objElement->template : $this->strTemplate));
+            return $objTemplate->parse();
         }
 
         $strFields = '';

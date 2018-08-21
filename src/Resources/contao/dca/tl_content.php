@@ -20,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('DMA\\DM
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['dma_eg_data'] = array
 (
-    'sql'                     => "longtext NULL"
+    'sql'                     => "longblob NULL"
 );
 $GLOBALS['TL_DCA']['tl_content']['fields']['dmaElementTpl'] = array
 (
