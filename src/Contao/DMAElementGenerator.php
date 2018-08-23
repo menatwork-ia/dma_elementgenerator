@@ -173,7 +173,7 @@ class DMAElementGenerator extends \Frontend
             //echo $objField->title;
             $objFieldTemplate->addImage = false;
             $objFieldTemplate->title = $objField->title;
-            $objFieldTemplate->value = $arrElements[$objField->title] = "'".$arrData[$objField->title]."'";
+            $objFieldTemplate->value = $arrElements[$objField->title] = $arrData[$objField->title];
             $objFieldTemplate->label = $arrLabels[$objField->title] = $objField->label;
             $objFieldTemplate->class = $arrClasses[$objField->title] = ($objField->class == '' ? '' : $objField->class.' ').$objField->type;
 
