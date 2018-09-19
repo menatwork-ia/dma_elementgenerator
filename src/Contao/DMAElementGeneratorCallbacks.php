@@ -396,8 +396,8 @@ class DMAElementGeneratorCallbacks extends \Backend
                                 'csv' => ','
                             ),
                             'wizard' => $objField->wizard ? $objField->wizard : '',
-                            'load_callback' => array(array('DMAElementGeneratorCallbacks','load_'.$objField->title)),
-                            'save_callback' => array(array('DMAElementGeneratorCallbacks','save_'.$objField->title))
+                            'load_callback' => array(array('DMA\\DMABundle\\Contao\\DMAElementGeneratorCallbacks','load_'.$objField->title)),
+                            'save_callback' => array(array('DMA\\DMABundle\\Contao\\DMAElementGeneratorCallbacks','save_'.$objField->title))
                         );
                         if ($objField->eval_rte)
                         {
