@@ -193,15 +193,16 @@ class DMAElementGeneratorCallbacks extends \Backend
                 // A legend just needs an entry in the palette
                 if ($objField->type == 'legend')
                 {
-
                     $blnAddLegendToPalette = false;
                     if ($objField->useCheckboxCondition)
                     {
+
                         if ($objField->subpaletteSelector)
                         {
                             $objSubSelector = $this->Database->prepare("SELECT * FROM tl_dma_eg_fields WHERE id=?")
                                 ->limit(1)
                                 ->execute($objField->subpaletteSelector);
+
                             // funktioniert nur mit Contao >= 3.1 fehlerfrei
                             if(version_compare(VERSION.BUILD, '3.10','>='))
                             {
@@ -359,6 +360,7 @@ class DMAElementGeneratorCallbacks extends \Backend
                         }
                         else
                         {
+
                             if (substr($this->paletteReplace,-1) == ';')
                             {
                                 $this->paletteReplace .= '' . $title;
@@ -369,7 +371,6 @@ class DMAElementGeneratorCallbacks extends \Backend
                             }
                         }
                         //$dma_subpalettes
-
                         $GLOBALS['TL_DCA'][$strTable]['fields'][$title] = array
                         (
                             'label' => array($objField->label,$objField->explanation),
