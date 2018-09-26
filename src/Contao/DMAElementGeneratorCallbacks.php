@@ -420,7 +420,7 @@ class DMAElementGeneratorCallbacks extends \Backend
                             }
 
                             // backward-compatibility
-                            if ($objField->eval_path=='tl_files')
+                            if ($objField->eval_path=='files')
                             {
                                 $objField->eval_path = '';
                             }

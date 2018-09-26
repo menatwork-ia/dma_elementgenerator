@@ -70,9 +70,9 @@ $GLOBALS['DMA_EG']['EL_COUNT'] = array();
 
 
 // Hooks
-if(version_compare(VERSION.BUILD, '3.10','>=') && version_compare(VERSION.BUILD, '3.20','<')) {
-	$GLOBALS['TL_HOOKS']['executePostActions'][] = array('DMA\DMABundle\Contao\DMAElementGenerator','fixedAjaxRequest');
-}
+//if(version_compare(VERSION.BUILD, '3.10','>=') && version_compare(VERSION.BUILD, '3.20','<')) {
+//	$GLOBALS['TL_HOOKS']['executePostActions'][] = array('DMA\DMABundle\Contao\DMAElementGenerator','fixedAjaxRequest');
+//}
 
 $GLOBALS['TL_HOOKS']['loadLanguageFile'][] = array('DMA\DMABundle\Contao\DMAElementGenerator','dmaEgLoadLanguageFile');
 
