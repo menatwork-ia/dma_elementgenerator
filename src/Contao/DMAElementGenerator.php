@@ -93,7 +93,6 @@ class DMAElementGenerator extends \Frontend
             $objElement->template = $data->dmaElementTpl;
         }
 
-
         //Ausgabe in divs statt ul-li-Kontruktion ermöglichen
         if ($objElement->display_in_divs) {
             $this->blnDisplayInDivs = true;
@@ -116,7 +115,11 @@ class DMAElementGenerator extends \Frontend
 
         if ($objField === null) {
             $objTemplate = new \FrontendTemplate(($objElement->template ? $objElement->template : $this->strTemplate));
-
+            $objTemplate->setData(
+                [
+                    'cssID' => ($data->cssID[0] != '') ? ' id="' . $data->cssID[0] . '"' : '',
+                    'class' => trim(($objElement->content ? 'ce_' : 'mod_') . $data->type . ' ' . $data->cssID[1])
+                ]);
             return $objTemplate->parse();
         }
 
