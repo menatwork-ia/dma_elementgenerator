@@ -117,6 +117,7 @@ class DMAElementGenerator extends \Frontend
             $objTemplate = new \FrontendTemplate(($objElement->template ? $objElement->template : $this->strTemplate));
             $objTemplate->setData(
                 [
+                    'id'    => $data->id,
                     'cssID' => ($data->cssID[0] != '') ? ' id="' . $data->cssID[0] . '"' : '',
                     'class' => trim(($objElement->content ? 'ce_' : 'mod_') . $data->type . ' ' . $data->cssID[1])
                 ]);
