@@ -522,7 +522,7 @@ $GLOBALS['TL_DCA']['tl_dma_eg_fields'] = array
     )
 );
 
-if (in_array('multicolumnwizard', $this->Config->getActiveModules()))
+if (in_array('MultiColumnWizardBundle', $this->Config->getActiveModules()) || in_array('multicolumnwizard', $this->Config->getActiveModules()))
 {
     $GLOBALS['TL_DCA']['tl_dma_eg_fields']['fields']['type']['options'][] = 'multiColumnWizard';
 }
