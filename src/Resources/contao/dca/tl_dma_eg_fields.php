@@ -290,7 +290,7 @@ $GLOBALS['TL_DCA']['tl_dma_eg_fields'] = array
         'eval_maxlength' => array
         (
             'label'                 => &$GLOBALS['TL_LANG']['tl_dma_eg_fields']['eval_maxlength'],
-            'default'               => '',
+            'default'               => 0,
             'inputType'             => 'text',
             'exclude'				=> true,
             'eval'                  => array('maxlength'=>3, 'tl_class'=>'w50', 'rgxp'=>'digit'),
@@ -309,6 +309,7 @@ $GLOBALS['TL_DCA']['tl_dma_eg_fields'] = array
         'eval_extensions' => array
         (
             'label'                 => &$GLOBALS['TL_LANG']['tl_dma_eg_fields']['eval_extensions'],
+            'default'               => '',
             'inputType'             => 'text',
             'exclude'				=> true,
             'eval'                  => array('maxlength'=>255, 'tl_class'=>'w50 clr'),
@@ -453,7 +454,7 @@ $GLOBALS['TL_DCA']['tl_dma_eg_fields'] = array
         'subpaletteSelector' => array
         (
             'label'                 => &$GLOBALS['TL_LANG']['tl_dma_eg_fields']['subpaletteSelector'],
-            'default'               => '',
+            'default'               => 0,
             'exclude'               => true,
             'inputType'             => 'select',
             'options_callback'      => array('tl_dma_eg_fields', 'getCheckboxelements'),
