@@ -775,7 +775,7 @@ class DMAElementGenerator extends \Frontend
 
             // Set the new value
             $varValue = \Input::post('value', true);
-            $strKey   = ($this->strAction == 'reloadPagetree') ? 'pageTree' : 'fileTree';
+            $strKey   = ($strAction == 'reloadPagetreeDMA') ? 'pageTree' : 'fileTree';
 
             // Convert the selected values
             if ($varValue != '') {
