@@ -363,10 +363,44 @@ class DMAElementGenerator extends Frontend
                     if (is_array(deserialize($arrData[$objField->title]))) {
                         //mehrere Dateien
                         $arrFileFieldNames[] = $objField->title;
-                        $tempArrFiles                               = deserialize($arrData[$objField->title]);
-                        $arrTemplateData[$objField->title]['value'] = array();
-                        foreach ($tempArrFiles as $file) {
+                        $tempArrFiles = deserialize($arrData[$objField->title]);
 
+                        if ($objField->eval_sortable)
+                        {
+                            $tmp = deserialize($data->orderSRC);
+
+                            if (!empty($tmp) && is_array($tmp))
+                            {
+                                // Remove all values
+                                $arrOrder = array_map(function(){}, array_flip($tmp));
+
+                                // Move the matching elements to their position in $arrOrder
+                                foreach ($tempArrFiles as $k=>$v)
+                                {
+                                    $vBin = \StringUtil::uuidToBin($v);
+                                    if (array_key_exists($vBin, $arrOrder))
+                                    {
+                                        $arrOrder[$vBin] = $v;
+                                        unset($tempArrFiles[$k]);
+                                    }
+                                }
+
+                                // Append the left-over images at the end
+                                if (!empty($tempArrFiles))
+                                {
+                                    $arrOrder = array_merge($arrOrder, array_values($tempArrFiles));
+                                }
+
+                                // Remove empty (unreplaced) entries
+                                $tempArrFiles = array_values(array_filter($arrOrder));
+                                unset($arrOrder);
+                            }
+
+                        }
+
+                        $arrTemplateData[$objField->title]['value'] = array();
+                        foreach ($tempArrFiles as $file)
+                        {
                             $objFile = null;
 
                             if (is_numeric($file)) {
@@ -425,14 +459,6 @@ class DMAElementGenerator extends Frontend
                                 //$arrElementData[] = $objFile->path;
                             }
                         }
-                        //$arrElements[$objField->title] = implode(",",$arrElementData);
-                        //print_r($arrData);
-                        if ($arrData['orderSRC'] != '') {
-                            //echo "order";
-                        }
-                        //echo "<pre>";
-                        //print_r($arrTemplateData[$objField->title]);
-                        //echo "</pre>";
 
                     }
                     else {

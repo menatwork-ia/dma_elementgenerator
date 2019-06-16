@@ -211,6 +211,10 @@ $GLOBALS['TL_LANG']['tl_dma_eg_fields']['eval_do_not_copy']      = array(
     'Nicht kopieren',
     'Werte dieses Feldes werden beim Kopieren des Elements ignoriert'
 );
+
+$GLOBALS['TL_LANG']['tl_dma_eg_fields']['eval_sortable'] = array('Sortierbar', 'Soll diese Auswahl sortierbar sein?');
+$GLOBALS['TL_LANG']['tl_dma_eg_fields']['eval_sortable_disabled'] = array('Sortierbar', 'Pro Element kann leider nur ein Feld sortierbar sein.');
+
 $GLOBALS['TL_LANG']['tl_dma_eg_fields']['class']                 = array(
     'CSS-Klasse',
     'Geben Sie eine oder mehrere durch Leerzeichen getrennte Klassen an'

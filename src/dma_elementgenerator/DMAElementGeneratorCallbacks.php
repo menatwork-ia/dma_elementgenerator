@@ -398,12 +398,7 @@ class DMAElementGeneratorCallbacks extends Backend
                         }
 
                         if ($objField->eval_sortable) {
-                            //$GLOBALS['TL_DCA'][$strTable]['fields'][$title]['eval']['orderField'] = DMA_EG_PREFIX . $objField->id . '_' . 'orderSRC';
-                            //$GLOBALS['TL_DCA'][$strTable]['fields'][DMA_EG_PREFIX . $objField->id . '_' . 'orderSRC'] = array
-                            //(
-                            //	'label' => &$GLOBALS['TL_LANG']['tl_content']['orderSRC']
-                            //);
-
+                            $GLOBALS['TL_DCA'][$strTable]['fields'][$title]['eval']['orderField'] = 'orderSRC';
                         }
 
                         if ($objField->type == 'tableWizard') {
