@@ -730,6 +730,14 @@ class DMAElementGenerator extends \Frontend
                     }
                 }
             }
+            
+            if (stripos($strField, 'dma_eg') !== false && stripos($strField, '[') !== false) {
+                $strSecondField = \preg_replace('/(\[[0-9a-zA-Z]*\])/i', '', $strField);
+
+                if (isset($GLOBALS['TL_DCA'][$dc->table]['fields'][$strSecondField])) {
+                    $strField = $strSecondField;
+                }
+            }
 
             // The field does not exist
             if (!isset($GLOBALS['TL_DCA'][$dc->table]['fields'][$strField])) {
