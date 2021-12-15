@@ -464,7 +464,7 @@ class DMAElementGenerator extends \Frontend
                         }
                     }
 
-                    if ($objFile) {
+                    if ($objFile !== null && $objFile->exists()) {
 
                         $arrTemplateData[$objField->title]['value']   = array();
                         $arrTemplateData[$objField->title]['value'][] = array(
@@ -479,7 +479,7 @@ class DMAElementGenerator extends \Frontend
                                 'height'    => $objFile->height,
                                 'extension' => $objFile->extension,
                                 'icon'      => $objFile->icon,
-                                'size'      => $this->getReadableSize($objFile->filesize, 1),
+                                'size'      => ($objFile->filesize !== null) ? $this->getReadableSize($objFile->filesize, 1) : 0,
                                 'filename'  => $objFile->filename
                             )
                         );
@@ -730,7 +730,7 @@ class DMAElementGenerator extends \Frontend
                     }
                 }
             }
-            
+
             if (stripos($strField, 'dma_eg') !== false && stripos($strField, '[') !== false) {
                 $strSecondField = \preg_replace('/(\[[0-9a-zA-Z]*\])/i', '', $strField);
 
