@@ -417,7 +417,7 @@ class DMAElementGeneratorCallbacks extends \Backend
                                 else{
                                     $objPath = \FilesModel::findByPk($intPathIds[0]);
                                 }
-                                $objField->eval_path = $objPath->path;
+                                $objField->eval_path = $objPath->path ?? '';
                             }
 
                             // backward-compatibility

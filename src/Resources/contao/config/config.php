@@ -30,7 +30,7 @@ array_insert($GLOBALS['BE_MOD']['design'], 1, array
 include TL_ROOT . '/system/config/localconfig.php';
 
 // Get defined frontend modules from configuration
-if ($GLOBALS['TL_CONFIG']['dma_eg_modules'])
+if ($GLOBALS['TL_CONFIG']['dma_eg_modules']??false)
 {
 	$arrModules = unserialize($GLOBALS['TL_CONFIG']['dma_eg_modules']);
 } else
@@ -39,7 +39,7 @@ if ($GLOBALS['TL_CONFIG']['dma_eg_modules'])
 }
 
 // Get defined Contentelements from configuration
-if ($GLOBALS['TL_CONFIG']['dma_eg_content'])
+if ($GLOBALS['TL_CONFIG']['dma_eg_content']??false)
 {
 	$arrContent = unserialize($GLOBALS['TL_CONFIG']['dma_eg_content']);
 } else

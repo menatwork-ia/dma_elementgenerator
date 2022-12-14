@@ -92,7 +92,7 @@ $GLOBALS['TL_DCA']['tl_dma_eg'] = array
                 'label'               => &$GLOBALS['TL_LANG']['tl_dma_eg']['delete'],
                 'href'                => 'act=delete',
                 'icon'                => 'delete.gif',
-                'attributes'          => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['tl_dma_eg']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
+                'attributes'          => 'onclick="if (!confirm(\'' . ($GLOBALS['TL_LANG']['tl_dma_eg']['deleteConfirm']??'') . '\')) return false; Backend.getScrollOffset();"'
             ),
             'toggle' => array
             (
@@ -252,11 +252,11 @@ class tl_dma_eg extends \Backend
 
         foreach ($GLOBALS['TL_CTE'] as $contentElementKey=>$contentElement)
         {
-            if (gettype($GLOBALS['TL_LANG']['CTE'][$contentElementKey]) == "string")
+            if (gettype(($GLOBALS['TL_LANG']['CTE'][$contentElementKey] ?? null)) == "string")
             {
                 $arrReturn['labelContentelement'][$contentElementKey] = $GLOBALS['TL_LANG']['CTE'][$contentElementKey];
             }
-			elseif (gettype($GLOBALS['TL_LANG']['CTE'][$contentElementKey]) == "array")
+			elseif ((gettype($GLOBALS['TL_LANG']['CTE'][$contentElementKey] ?? null)) == "array")
             {
                 $arrReturn['labelContentelement'][$contentElementKey] = $GLOBALS['TL_LANG']['CTE'][$contentElementKey][0];
             }
@@ -293,8 +293,8 @@ class tl_dma_eg extends \Backend
     public function listFormFields($arrRow)
     {
         return '<div class="cte_type ' . ($arrRow['invisible'] ? 'unpublished' : 'published') . '">'
-               . ($arrRow['content'] ? ' ' . $GLOBALS['TL_LANG']['tl_dma_eg']['labelContentelement'] . ' [' . $arrRow['category'] . ']' : '')
-               . ($arrRow['module'] ? ' ' . $GLOBALS['TL_LANG']['tl_dma_eg']['labelFrontendmodule'] . ' [' . $arrRow['category'] . ']' : '')
+               . ($arrRow['content'] ? ' ' . ($GLOBALS['TL_LANG']['tl_dma_eg']['labelContentelement'] ?? '') . ' [' . $arrRow['category'] . ']' : '')
+               . ($arrRow['module'] ? ' ' . ($GLOBALS['TL_LANG']['tl_dma_eg']['labelFrontendmodule'] ?? '') . ' [' . $arrRow['category'] . ']' : '')
                . '</div>'."\n"
                . '<div class="block">'
                . '<strong>' . $arrRow['title'] . '</strong>' ."\n"

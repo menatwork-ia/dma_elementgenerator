@@ -1,1 +1,1 @@
-<?= $this->generateWithError(!$GLOBALS['TL_CONFIG']['oldBeTheme']); ?>
+<?= $this->generateWithError(true); ?>

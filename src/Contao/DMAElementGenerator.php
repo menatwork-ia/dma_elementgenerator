@@ -472,7 +472,7 @@ class DMAElementGenerator extends \Frontend
                             'meta'       => $objFiles ? deserialize($objFiles->meta) : '',
                             'src'        => $objFile->value,
                             'value'      => $objFile->value,
-                            'dl'         => $this->Environment->request . (($GLOBALS['TL_CONFIG']['disableAlias'] || strpos($this->Environment->request,
+                            'dl'         => $this->Environment->request . ((($GLOBALS['TL_CONFIG']['disableAlias'] ?? false) || strpos($this->Environment->request,
                                         '?') !== false) ? '&amp;' : '?') . 'file=' . $this->urlEncode($objFile->value),
                             'attributes' => array(
                                 'width'     => $objFile->width,
@@ -659,11 +659,11 @@ class DMAElementGenerator extends \Frontend
 
         $arrStyle = array();
 
-        if ($data->space[0] != '') {
+        if (($data->space[0] ?? '') != '') {
             $arrStyle[] = 'margin-top:' . $data->space[0] . 'px;';
         }
 
-        if ($data->space[1] != '') {
+        if (($data->space[1] ?? '') != '') {
             $arrStyle[] = 'margin-bottom:' . $data->space[1] . 'px;';
         }
 
